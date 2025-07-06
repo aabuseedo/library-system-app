@@ -43,7 +43,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.tvAuthor.setText("بواسطة " + book.getAuthorName());
 
         Glide.with(context)
-                .load(book.getCoverImage()) // تأكد أن الـ URL كامل
+                .load(book.getCoverImage())
                 .placeholder(R.drawable.book)
                 .into(holder.imgCover);
 

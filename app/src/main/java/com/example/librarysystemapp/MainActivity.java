@@ -1,8 +1,10 @@
 package com.example.librarysystemapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.O
     private CategoryAdapter categoryAdapter;
     private List<Book> allBooks = new ArrayList<>();
     private List<Category> categoryList = new ArrayList<>();
-
     private ApiService apiService;
+    ImageView imgTop ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,15 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.O
 
         loadCategories();
         loadBooks(); // تحميل جميع الكتب في البداية
+
+        imgTop = findViewById(R.id.imgTop);
+        imgTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
+
     }
 
     private void loadCategories() {

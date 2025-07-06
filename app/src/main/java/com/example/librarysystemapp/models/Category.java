@@ -5,7 +5,7 @@ public class Category {
     private String name;
 
     public Category() {
-        // كونستركتر فارغ مطلوب لـ Retrofit أو Gson
+
     }
 
     public Category(int id, String name) {

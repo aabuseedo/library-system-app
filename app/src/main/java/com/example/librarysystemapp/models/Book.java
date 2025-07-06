@@ -3,7 +3,7 @@ package com.example.librarysystemapp.models;
 public class Book {
     private int id;
     private String title;
-    private Author author;  // هنا غيرنا من String إلى Author
+    private Author author;
     private String description;
     private String cover_image;
     private Category category;
