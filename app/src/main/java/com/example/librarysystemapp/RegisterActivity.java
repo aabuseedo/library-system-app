@@ -3,8 +3,10 @@ package com.example.librarysystemapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText etName, etEmail, etPassword, etConfirmPassword;
     Button btnRegister;
-
+    TextView tvLoginLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,14 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnRegister = findViewById(R.id.btnRegister);
+        tvLoginLink = findViewById(R.id.tvLoginLink);
+
+        tvLoginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
 
         btnRegister.setOnClickListener(v -> {
             String name = etName.getText().toString().trim();
